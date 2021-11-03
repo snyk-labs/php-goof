@@ -20,20 +20,22 @@ php -S localhost:8000
 
 [snyk.io/vuln/SNYK-PHP-LEAGUECOMMONMARK-174004](https://snyk.io/vuln/SNYK-PHP-LEAGUECOMMONMARK-174004)
 
-#### Markdown link
+```
+* Markdown link
 This is **markdown**
 
-#### Markdown link
+* Markdown link
 [Snyk](https://snyk.io/)
 
-#### Failed XSS
+* Failed XSS
 [Gotcha](javascript:alert(1))
 
-#### Failed XSS despite URL encoding
+* Failed XSS despite URL encoding
 [Gotcha](javascript&#58;alert(1&#41;)
 
-#### Successfull XSS using vuln and browser interpretation 
+* Successfull XSS using vuln and browser interpretation 
 [Gotcha](javascript&amp;colon;alert%28&#039;Gotcha&#039;%29)
+```
 
 ## Fixing the issues
 To find these flaws in this application (and in your own apps), run:
