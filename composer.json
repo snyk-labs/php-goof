@@ -1,0 +1,9 @@
+{
+    "name": "snyk/phpgoof",
+    "description": "A project to demonstrate the vulnerabilities that can occur inside PHP frameworks and libraries",
+    "type": "project",
+    "license": "Apache 2.0",
+    "require": {
+        "league/commonmark": "0.18.2"
+    }
+}
