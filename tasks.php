@@ -1,30 +1,35 @@
 <?php
-    include("db.php");
+
+include('db.php');
+
+if(isset($_POST['save_task'])){
     
-    if (isset($_GET['id'])){
-        $id = $_GET['id'];
-        $query = "SELECT * FROM task where id = $id";
-        $result = mysqli_query($conn, $query);
-        
-        if(mysqli_num_rows($result) == 1){
-            $row = mysqli_fetch_array($result);
-            $title = $row['title'];
+    $title = urlencode($_POST['title']);
 
+    $query = "INSERT INTO task(title) VALUES ('$title')";
+    $result = mysqli_query($conn, $query);
+
+    if(!$result){
+        die("Query failed");
+    }
+    
+    $_SESSION['message'] = 'Task saved successfully';
+    $_SESSION['message_type'] = 'success';
+
+} elseif (isset($_GET['delid'])) {
+
+        $id = $_GET['id'];
+
+        $query = "DELETE FROM task WHERE id = $id";
+        $result = mysqli_query($conn, $query);
+        if(!$result){
+            die("Query failed");
         }
-        
-    }
-    if (isset($_POST['update'])){
-        $id = $_GET['id'];
-        $title = urldecode($_POST['title']);
+        $_SESSION['message'] = 'Task removed successfully';
+        $_SESSION['message_type'] = 'warning';
 
-        $query = "UPDATE task SET title = '$title' WHERE id = '$id'";
-        $result = mysqli_query($conn, $query);
+}
 
-        $_SESSION['message'] = 'Task updated successfully';
-        $_SESSION['message_type'] = 'info';
+header('Location: index.php');
 
-        header('Location: index.php');
-
-    }
 ?>
-

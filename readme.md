@@ -8,7 +8,20 @@ A vulnerable PHP demo application
 - Mysql or MariaDB 
 - Composer 2
 
-Using the PHP built in server run the code from the root app directory
+Create mysql or mariaDB database and update the db.php file, with database details. 
+
+Import database.sql file into the newly created database or run the following table create.
+
+```
+CREATE TABLE `task` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb3;
+```
+
+Finally, Using the PHP built in server run the code from the root app directory
 
 ```
 php -S localhost:8000

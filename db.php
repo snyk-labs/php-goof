@@ -1,8 +1,8 @@
 <?php
 $connection = 'localhost';
-$username = '';
-$password = '';
-$database = '';
+$username = 'phpgoof';
+$password = 'password';
+$database = 'phpgoof';
 
 session_start();
 

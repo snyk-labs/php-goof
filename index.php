@@ -36,7 +36,7 @@
             </div>
             <?php session_unset();} ?>
             <div class="card card-body">
-                <form action="save_task.php" method="POST">
+                <form action="tasks.php" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="stext" name="title" placeholder="Title" required autofocus>
                     </div>
