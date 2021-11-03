@@ -8,6 +8,8 @@ A vulnerable PHP demo application
 - Mysql or MariaDB 
 - Composer 2
 
+Run composer install
+
 Create mysql or mariaDB database and update the db.php file, with database details. 
 
 Import database.sql file into the newly created database or run the following table create.
