@@ -8,7 +8,7 @@ A vulnerable PHP demo todo application that is for demonstration and education p
 - Mysql or MariaDB 
 - Composer 2
 
-Run composer install
+Run composer install from the project root directory
 
 Create mysql or mariaDB database and update the db.php file, with database details. 
 
