@@ -6,7 +6,11 @@ if(isset($_POST['save_task'])){
     
     $title = urlencode($_POST['title']);
 
-    $query = "INSERT INTO task(title) VALUES ('$title')";
+    if(isset($_POST['edid'])) { 
+        $edid = $_POST['edid'];
+        $query = "UPDATE task SET title = '$title' WHERE id = '$edid'";
+    }
+    else $query = "INSERT INTO task(title) VALUES ('$title')";
     $result = mysqli_query($conn, $query);
 
     if(!$result){
@@ -18,7 +22,7 @@ if(isset($_POST['save_task'])){
 
 } elseif (isset($_GET['delid'])) {
 
-        $id = $_GET['id'];
+        $id = $_GET['delid'];
 
         $query = "DELETE FROM task WHERE id = $id";
         $result = mysqli_query($conn, $query);

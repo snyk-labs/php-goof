@@ -6,6 +6,24 @@
     use League\CommonMark\CommonMarkConverter;
     $converter = new CommonMarkConverter(['html_input' => 'escape', 'allow_unsafe_links' => false]);
 
+if (isset($_GET['edid'])){
+
+    $id = $_GET['edid'];
+
+    $query = "SELECT * FROM task where id = $id";
+    $result = mysqli_query($conn, $query);
+
+    if(mysqli_num_rows($result) == 1){
+        $row = mysqli_fetch_array($result);
+        $title = $row['title'];
+
+        $_SESSION['message'] = 'Edit Task';
+        $_SESSION['message_type'] = 'info';
+
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +56,10 @@
             <div class="card card-body">
                 <form action="tasks.php" method="POST">
                     <div class="form-group">
-                        <input class="form-control" type="stext" name="title" placeholder="Title" required autofocus>
+                        <input class="form-control" type="stext" name="title" placeholder="Title" required autofocus value="<?php if(isset($title)) echo $title; ?>">
+                        <?php if(isset($title)){
+                            ?><input type="hidden" name="edid" value="<?php echo $_GET['edid']?>"><?php } ?>
+
                     </div>
                     <input type="submit" class="btn btn-success mt-3" name="save_task" value="Save todo">
                 </form>
@@ -66,8 +87,8 @@
                         echo $converter->convertToHtml(urldecode($row['title']));?></td>
                         <td><?php echo $row['created_at'];?></td>
                         <td>
-                            <a href="edit.php?id=<?php echo $row['id'];?>"><span class="material-icons">edit</span></a>
-                            <a href="delete_task.php?id=<?php echo $row['id'];?>"><span class="material-icons text-danger">delete_forever</span></a>
+                            <a href="index.php?edid=<?php echo $row['id'];?>"><span class="material-icons">edit</span></a>
+                            <a href="tasks.php?delid=<?php echo $row['id'];?>"><span class="material-icons text-danger">delete_forever</span></a>
                         </td>
                     </tr>
                     <?php
