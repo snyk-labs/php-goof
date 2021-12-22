@@ -64,13 +64,4 @@ To run click the email icon next to a line entry to send an email reminder.
 
 Note: No emails will actually send or are being stored, only validating the email address entered into the input using the PHPMailer library. 
 
-## Fixing the issues
-To find these flaws in this application (and in your own apps), run:
-```
-npm install -g snyk
-snyk wizard
-```
-
-In this application, the default `snyk wizard` answers will fix all the issues.
-When the wizard is done, restart the application and run the exploits again to confirm they are fixed.
 
