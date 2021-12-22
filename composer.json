@@ -4,6 +4,7 @@
     "type": "project",
     "license": "Apache 2.0",
     "require": {
-        "league/commonmark": "0.18.2"
+        "league/commonmark": "0.18.2", 
+        "phpmailer/phpmailer": "6.4.1"
     }
 }
