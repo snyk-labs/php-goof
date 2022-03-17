@@ -65,7 +65,7 @@ To run click the email icon next to a line entry to send an email reminder.
 Note: No emails will actually send or are being stored, only validating the email address entered into the input using the PHPMailer library. 
 
 
-### dompdf 1.2.0 remote code execution 
+### dompdf remote code execution 
 
 This vulnerability is using dompdf library version 1.2.0 and allows for remote code execution on the target application. In this app there is a custom font called gotcha-normal.otf which has `<?php phpinfo(); ?>` loaded into the copyright font meta. 
 
