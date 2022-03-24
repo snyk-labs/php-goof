@@ -69,6 +69,8 @@ Note: No emails will actually send or are being stored, only validating the emai
 
 [SNYK-PHP-DOMPDFDOMPDF-2428942](https://security.snyk.io/vuln/SNYK-PHP-DOMPDFDOMPDF-2428942)
 
+[Read more about this Vulnerability](https://snyk.io/blog/security-alert-php-pdf-library-dompdf-rce/)
+
 This vulnerability is using dompdf library version 1.2.0 and allows for remote code execution on the target application. In this app there is a custom font called gotcha-normal.otf which has `<?php phpinfo(); ?>` loaded into the copyright font meta. 
 
 The font file is then referenced as a `font-family` in the CSS file `gotcha.css` which is then injected into the dompdf html output via a stylesheet link. 
