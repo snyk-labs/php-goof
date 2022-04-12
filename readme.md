@@ -6,7 +6,7 @@ A vulnerable PHP demo todo application that is for demonstration and education p
   
 ## Requisites & Running 
 
-- PHP 7.1+
+- PHP 7.4+
 - Mysql or MariaDB 
 - Composer 2
 
