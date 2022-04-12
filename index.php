@@ -68,7 +68,8 @@
                             <a href="index.php?edid=<?php echo $row['id'];?>"><span class="material-icons">edit</span></a>
                             <a href="tasks.php?delid=<?php echo $row['id'];?>"><span class="material-icons text-danger">delete_forever</span></a>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#myModal" title="send email reminder"><span class="material-icons email">email</span></a>
-                         
+                             <a href="pdf.php?title=<?php echo $row['title'];?>" target="_blank"><span class="material-icons picture_as_pdf">picture_as_pdf</span></a>
+
                             <!-- Modal -->
                             <div class="modal" id="myModal">
                               <div class="modal-dialog">
