@@ -5,7 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "eba49990c2c9d490a1a65bd7786ae4f4",
-    "packages": [
+    "packages": [//second test
         {
             "name": "dompdf/dompdf",
             "version": "v1.2.0",
